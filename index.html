@@ -535,11 +535,9 @@ a{text-decoration:none;color:inherit}
   width:100%;border-radius:12px;overflow:hidden;
   margin-bottom:20px;aspect-ratio:16/10;
 }
-.tratamento-img img{
-  width:100%;height:100%;object-fit:cover;
-  transition:transform .4s ease;
-}
+.tratamento-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease;}
 .tratamento-card:hover .tratamento-img img{transform:scale(1.03)}
+@media(max-width:600px){.tratamento-img{height:auto;aspect-ratio:16/10}.tratamento-img img{object-fit:contain;background:var(--cream)}}
 
 /* DOENCA CARD IMAGE (dark section) */
 .doenca-img{
@@ -609,6 +607,7 @@ a{text-decoration:none;color:inherit}
       <div class="pill"><span class="pill-check">&#10003;</span> Cirurgia MIGS</div>
       <div class="pill"><span class="pill-check">&#10003;</span> Trabeculectomia</div>
       <div class="pill"><span class="pill-check">&#10003;</span> Aceita Convênios</div>
+      <div class="pill" style="grid-column:1/-1"><span class="pill-check">&#10003;</span> Pacote Consulta + Exames</div>
     </div>
     <select class="hero-select" id="unitSelect" aria-label="Selecione a unidade mais próxima" onchange="updateWaLinks()">
       <option value="">Selecione a unidade mais próxima</option>
@@ -687,7 +686,7 @@ a{text-decoration:none;color:inherit}
 <section style="padding:56px 0;background:var(--white)">
   <div class="visual-impact fade-in-up">
     <div class="visual-impact-img">
-      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-campo-visual_dc55fec7.png" alt="Comparação de campo visual: visão normal versus visão com glaucoma" loading="lazy" decoding="async" width="1456" height="816">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-campo-visual-pt_536e7323.png" alt="Comparação de campo visual: visão normal versus visão com glaucoma" loading="lazy" decoding="async" width="1456" height="816">
     </div>
     <div class="visual-impact-content">
       <span class="section-label">O Ladrão Silencioso da Visão</span>
@@ -768,7 +767,7 @@ a{text-decoration:none;color:inherit}
       <!-- Colírios -->
       <div class="tratamento-card fade-in-up delay-1">
         <div class="tratamento-img">
-          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-tonometria_9960d52d.png" alt="Exame de tonometria para medir pressão intraocular" loading="lazy" decoding="async" width="1456" height="816">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-colirio-pt_f6582a35.png" alt="Tratamento clínico do glaucoma com colírios hipotensores" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Tratamento Clínico (Colírios)</h3>
         <p class="tratamento-desc">Primeira linha de tratamento do glaucoma. Colírios hipotensores reduzem a pressão intraocular em 20-30%, controlando a progressão da doença. Uso diário e contínuo, com acompanhamento regular para ajuste da terapia.</p>
@@ -779,7 +778,7 @@ a{text-decoration:none;color:inherit}
       <!-- Laser SLT -->
       <div class="tratamento-card fade-in-up delay-2">
         <div class="tratamento-img">
-          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-laser-slt_7153edab.png" alt="Ilustração do procedimento Laser SLT para glaucoma" loading="lazy" decoding="async" width="1456" height="816">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-laser-slt-pt_99054112.png" alt="Ilustração do procedimento Laser SLT para glaucoma" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Laser SLT</h3>
         <p class="tratamento-desc">A Trabeculoplastia Seletiva a Laser (SLT) utiliza pulsos de baixa energia para estimular a drenagem natural do humor aquoso. Procedimento ambulatorial, rápido (5 minutos) e com anestesia tópica. Pode ser primeira linha ou complementar aos colírios.</p>
@@ -789,8 +788,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- Iridotomia -->
       <div class="tratamento-card fade-in-up delay-3">
-        <div class="tratamento-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+        <div class="tratamento-img">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-iridotomia-yag_c3854229.png" alt="Ilustração do procedimento de Iridotomia a Laser YAG para glaucoma" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Iridotomia a Laser (YAG)</h3>
         <p class="tratamento-desc">Procedimento preventivo e terapêutico para glaucoma de ângulo fechado. O laser YAG cria uma microabertura na íris, permitindo a passagem do humor aquoso e normalizando a pressão. Ambulatorial e rápido.</p>
@@ -811,8 +810,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- Trabeculectomia -->
       <div class="tratamento-card fade-in-up delay-5">
-        <div class="tratamento-icon">
-          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+        <div class="tratamento-img">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-trabeculectomia_0dcdf599.png" alt="Ilustração da cirurgia de Trabeculectomia para glaucoma" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Trabeculectomia</h3>
         <p class="tratamento-desc">Cirurgia filtrante clássica e altamente eficaz para casos moderados a avançados. Cria uma nova via de drenagem do humor aquoso sob a conjuntiva, reduzindo significativamente a pressão intraocular de forma duradoura.</p>
@@ -883,7 +882,7 @@ a{text-decoration:none;color:inherit}
       <p class="vi-caption">Ilustração educativa do exame de fundo de olho (oftalmoscopia).</p>
     </div>
     <div class="visual-impact-img">
-      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-nervo-optico_6daad858.png" alt="Comparação do nervo óptico normal versus nervo óptico com glaucoma" loading="lazy" decoding="async" width="1456" height="816">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-nervo-optico-pt_ed00f166.png" alt="Comparação do nervo óptico normal versus nervo óptico com glaucoma" loading="lazy" decoding="async" width="1456" height="816">
     </div>
   </div>
 </section>
@@ -894,7 +893,7 @@ a{text-decoration:none;color:inherit}
     <div class="section-header fade-in-up">
       <span class="section-label">Sua Jornada</span>
       <h2 class="section-title">Como funciona o atendimento</h2>
-      <p class="section-subtitle">Do primeiro contato ao acompanhamento contínuo, cada etapa é pensada para oferecer segurança e conforto.</p>
+      <p class="section-subtitle">Do primeiro contato ao acompanhamento contínuo, cada etapa é pensada para oferecer segurança e conforto. <strong>Consulta e exames podem ser realizados no mesmo dia</strong>, evitando múltiplos retornos.</p>
     </div>
     <div class="steps-list fade-in-up">
       <div class="step-card">
@@ -907,8 +906,8 @@ a{text-decoration:none;color:inherit}
       <div class="step-card">
         <div class="step-number">2</div>
         <div class="step-body">
-          <div class="step-name">Avaliação Completa</div>
-          <div class="step-desc">Exame oftalmológico detalhado com tonometria, gonioscopia, campimetria e OCT do nervo óptico. Diagnóstico preciso do tipo e estágio do glaucoma.</div>
+          <div class="step-name">Consulta + Exames no Mesmo Dia</div>
+          <div class="step-desc">Realize sua consulta e todos os exames necessários (tonometria, gonioscopia, campimetria, OCT do nervo óptico) <strong>no mesmo dia</strong>, com retorno ao médico para avaliação dos resultados — evitando múltiplos retornos à clínica.</div>
         </div>
       </div>
       <div class="step-card">
@@ -993,12 +992,12 @@ a{text-decoration:none;color:inherit}
       </div>
       <div class="testimonial-card">
         <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <p class="testimonial-text">"Minha mãe tem glaucoma avançado e precisou de cirurgia. O Dr. Fernando realizou a trabeculectomia com maestria. A pressão normalizou e a visão dela se mantém estável. Somos muito gratos."</p>
+       <p class="testimonial-text">"Minha mãe tem glaucoma avançado e precisou de cirurgia. O Dr. Samir em conjunto com o Dr. Fernando realizaram a Faco-Trabeculectomia com maestria. A pressão normalizou e a visão dela se mantém estável. Somos muito gratos a toda a equipe."</p>
         <div class="testimonial-author">
           <div class="testimonial-avatar">AF</div>
           <div>
             <div class="testimonial-name">Ana Flávia M.</div>
-            <div class="testimonial-procedure">Trabeculectomia — Tatuapé</div>
+            <div class="testimonial-procedure">Faco-Trabeculectomia — Tatuaípe</div>
             <div class="testimonial-verified">&#10003; Verificado no Google</div>
           </div>
         </div>
