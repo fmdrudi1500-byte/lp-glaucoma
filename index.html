@@ -506,6 +506,52 @@ a{text-decoration:none;color:inherit}
   font-size:13px;cursor:pointer;
 }
 
+/* VISUAL IMPACT SECTION */
+.visual-impact{
+  max-width:var(--max-w);margin:0 auto;
+  display:grid;grid-template-columns:1fr;gap:32px;
+  padding:0 20px;
+}
+@media(min-width:700px){.visual-impact{grid-template-columns:1fr 1fr;align-items:center}}
+.visual-impact-img{
+  border-radius:var(--radius-lg);overflow:hidden;
+  box-shadow:var(--shadow-lg);border:1px solid var(--border);
+}
+.visual-impact-img img{width:100%;height:auto;display:block}
+.visual-impact-content{}
+.visual-impact-content h3{
+  font-family:var(--font-heading);font-size:clamp(24px,4vw,34px);
+  font-weight:700;color:var(--navy-deep);line-height:1.2;margin-bottom:16px;
+}
+.visual-impact-content p{
+  font-size:15px;color:var(--text-body);line-height:1.75;margin-bottom:12px;
+}
+.visual-impact-content .vi-caption{
+  font-size:12px;color:var(--text-muted);font-style:italic;margin-top:8px;
+}
+
+/* TRATAMENTO CARD IMAGE */
+.tratamento-img{
+  width:100%;border-radius:12px;overflow:hidden;
+  margin-bottom:20px;aspect-ratio:16/10;
+}
+.tratamento-img img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .4s ease;
+}
+.tratamento-card:hover .tratamento-img img{transform:scale(1.03)}
+
+/* DOENCA CARD IMAGE (dark section) */
+.doenca-img{
+  width:100%;border-radius:12px;overflow:hidden;
+  margin-bottom:16px;aspect-ratio:16/10;
+}
+.doenca-img img{
+  width:100%;height:100%;object-fit:cover;
+  opacity:0.85;transition:opacity .3s ease;
+}
+.doenca-card:hover .doenca-img img{opacity:1}
+
 /* ANIMATIONS */
 .fade-in-up{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
 .fade-in-up.visible{opacity:1;transform:translateY(0)}
@@ -637,6 +683,22 @@ a{text-decoration:none;color:inherit}
   </div>
 </section>
 
+<!-- IMPACTO VISUAL: Campo Visual -->
+<section style="padding:56px 0;background:var(--white)">
+  <div class="visual-impact fade-in-up">
+    <div class="visual-impact-img">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-campo-visual_dc55fec7.png" alt="Comparação de campo visual: visão normal versus visão com glaucoma" loading="lazy" decoding="async" width="1456" height="816">
+    </div>
+    <div class="visual-impact-content">
+      <span class="section-label">O Ladrão Silencioso da Visão</span>
+      <h3>Glaucoma: a perda que você <em>não percebe</em></h3>
+      <p>O glaucoma destrói gradualmente a visão periférica, criando um efeito de "visão em túnel". Como a perda é lenta e indolor, muitos pacientes só percebem quando já perderam mais de 40% do campo visual.</p>
+      <p><strong>A imagem ao lado ilustra a diferença:</strong> à esquerda, a visão normal com campo completo; à direita, a visão comprometida pelo glaucoma, com escurecimento progressivo das bordas.</p>
+      <p class="vi-caption">Ilustração educativa — a perda real varia conforme o estágio da doença.</p>
+    </div>
+  </div>
+</section>
+
 <!-- SINAIS DE ALERTA -->
 <section class="section section-cream">
   <div class="section-inner">
@@ -705,8 +767,8 @@ a{text-decoration:none;color:inherit}
     <div class="tratamentos-grid">
       <!-- Colírios -->
       <div class="tratamento-card fade-in-up delay-1">
-        <div class="tratamento-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 2v6M12 18v4M4.93 4.93l4.24 4.24M14.83 14.83l4.24 4.24M2 12h6M18 12h4M4.93 19.07l4.24-4.24M14.83 9.17l4.24-4.24"/></svg>
+        <div class="tratamento-img">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-tonometria_e4f5e3b8.png" alt="Exame de tonometria para medir pressão intraocular" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Tratamento Clínico (Colírios)</h3>
         <p class="tratamento-desc">Primeira linha de tratamento do glaucoma. Colírios hipotensores reduzem a pressão intraocular em 20-30%, controlando a progressão da doença. Uso diário e contínuo, com acompanhamento regular para ajuste da terapia.</p>
@@ -716,8 +778,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- Laser SLT -->
       <div class="tratamento-card fade-in-up delay-2">
-        <div class="tratamento-icon">
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <div class="tratamento-img">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-laser-slt_7153edab.png" alt="Ilustração do procedimento Laser SLT para glaucoma" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Laser SLT</h3>
         <p class="tratamento-desc">A Trabeculoplastia Seletiva a Laser (SLT) utiliza pulsos de baixa energia para estimular a drenagem natural do humor aquoso. Procedimento ambulatorial, rápido (5 minutos) e com anestesia tópica. Pode ser primeira linha ou complementar aos colírios.</p>
@@ -738,8 +800,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- MIGS -->
       <div class="tratamento-card fade-in-up delay-4">
-        <div class="tratamento-icon">
-          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <div class="tratamento-img">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-migs-istent_739b6688.png" alt="Ilustração da cirurgia MIGS com microimplante iStent" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Cirurgia MIGS</h3>
         <p class="tratamento-desc">As Cirurgias Minimamente Invasivas de Glaucoma (MIGS) utilizam microimplantes para criar novas vias de drenagem com menor trauma cirúrgico. Recuperação mais rápida e menor risco de complicações. Pode ser combinada com cirurgia de catarata.</p>
@@ -760,8 +822,8 @@ a{text-decoration:none;color:inherit}
       </div>
       <!-- Diagnóstico -->
       <div class="tratamento-card fade-in-up delay-5">
-        <div class="tratamento-icon">
-          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <div class="tratamento-img">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-oct-scan_152b4b77.png" alt="Exame OCT do nervo óptico para diagnóstico de glaucoma" loading="lazy" decoding="async" width="1456" height="816">
         </div>
         <h3 class="tratamento-name">Diagnóstico Avançado</h3>
         <p class="tratamento-desc">Exames de alta precisão para detecção precoce e monitoramento: OCT do nervo óptico, campimetria computadorizada, tonometria de aplanação, gonioscopia, paquimetria e retinografia. Essenciais para acompanhar a evolução da doença.</p>
@@ -806,6 +868,22 @@ a{text-decoration:none;color:inherit}
         <h3 class="doenca-name">Glaucoma Pigmentar</h3>
         <p class="doenca-desc">Grânulos de pigmento da íris se desprendem e obstruem a malha trabecular, dificultando a drenagem. Mais comum em homens jovens e míopes. Pode ser tratado com laser SLT, colírios ou cirurgia conforme a gravidade.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACTO VISUAL: Nervo Óptico -->
+<section style="padding:56px 0;background:var(--white)">
+  <div class="visual-impact fade-in-up">
+    <div class="visual-impact-content">
+      <span class="section-label">Entenda o Dano</span>
+      <h3>O nervo óptico: <em>normal vs. glaucomatoso</em></h3>
+      <p>O glaucoma causa a escavação progressiva do nervo óptico (disco óptico), destruindo as fibras nervosas responsáveis pela transmissão da visão ao cérebro.</p>
+      <p>À esquerda, um nervo óptico saudável com escavação pequena e bordas preservadas. À direita, um nervo com escavação aumentada pelo glaucoma — <strong>dano irreversível</strong> que reforça a importância do diagnóstico precoce.</p>
+      <p class="vi-caption">Ilustração educativa do exame de fundo de olho (oftalmoscopia).</p>
+    </div>
+    <div class="visual-impact-img">
+      <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663028489100/bJpZLaNUAwiEuNvz3b7LGz/glaucoma-nervo-optico_6daad858.png" alt="Comparação do nervo óptico normal versus nervo óptico com glaucoma" loading="lazy" decoding="async" width="1456" height="816">
     </div>
   </div>
 </section>
